@@ -9,13 +9,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
+    const serviceID = 'service_ofoxe5q';
+    const templateID = 'template_6r8tw2m';
+    
     emailjs
-      .sendForm(
-        'service_ofoxe5q',
-        'template_6r8tw2m',
-        formRef.current,
-        'X7K7ebhIeOy3YwHki'
-      )
+      .sendForm(serviceID, templateID, this)
       .then(
         (result) => {
           console.log(result.text);
